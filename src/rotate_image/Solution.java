@@ -5,22 +5,23 @@ import java.util.Arrays;
 public class Solution {
 
     public static void rotate(int[][] matrix) {
-        for (int i = 0; i < matrix.length / 2; i++) {
-            for (int j = i; j < matrix.length - i - 1; j++) {
-                int last = matrix[matrix.length - j - 1][i];
+        final int n = matrix.length;
+        for (int i = 0; i < n / 2; i++) {
+            for (int j = i; j < n - i - 1; j++) {
+                int last = matrix[n - j - 1][i];
                 int temp = matrix[i][j];
 
                 matrix[i][j] = last;
                 last = temp;
-                temp = matrix[j][matrix.length - i - 1];
+                temp = matrix[j][n - i - 1];
 
-                matrix[j][matrix.length - i - 1] = last;
+                matrix[j][n - i - 1] = last;
                 last = temp;
-                temp = matrix[matrix.length - i - 1][matrix.length - j - 1];
+                temp = matrix[n - i - 1][n - j - 1];
 
-                matrix[matrix.length - i - 1][matrix.length - j - 1] = last;
+                matrix[n - i - 1][n - j - 1] = last;
                 last = temp;
-                matrix[matrix.length - j - 1][i] = last;
+                matrix[n - j - 1][i] = last;
             }
         }
     }
