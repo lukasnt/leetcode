@@ -11,6 +11,7 @@ class TreeNode {
     }
 }
 
+// @ts-ignore
 function buildTree(preorder: number[], inorder: number[]): TreeNode | null {
     if (preorder.length === 0) return null;
     const rootIndex = inorder.indexOf(preorder[0]);
